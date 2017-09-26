@@ -4,4 +4,4 @@
 小薇学院
 
 task01:
-http://ehperyee.oschina.io/ife-baidu/xwxy/task1.html
+https://ehperyee.github.io/IFE-baidu/xwxy/task1.html

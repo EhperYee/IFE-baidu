@@ -58,3 +58,27 @@ https://ehperyee.github.io/IFE-baidu/bbxy/task8.html
 
 task09:
 https://ehperyee.github.io/IFE-baidu/bbxy/task9.html
+
+耀耀学院
+
+task01:
+https://ehperyee.github.io/IFE-baidu/yyxy/task1.html
+
+task02:
+https://ehperyee.github.io/IFE-baidu/yyxy/task2.html
+
+task03:
+https://ehperyee.github.io/IFE-baidu/yyxy/task3.html
+
+task04:
+https://ehperyee.github.io/IFE-baidu/yyxy/task4.html
+
+task5:
+https://ehperyee.github.io/IFE-baidu/yyxy/task5.html
+
+task6:
+https://ehperyee.github.io/IFE-baidu/yyxy/task6.html
+
+task07:
+https://ehperyee.github.io/IFE-baidu/yyxy/task7.html
+

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务六：基础JavaScript练习（三）</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li{
+            float: left;
+            height: 40px;
+            line-height: 40px;
+            background: red;
+            color:#fff;
+            margin-left:10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<textarea name="" cols="30" rows="10" id="txt"></textarea>
+<input type="button" value="左侧入" id="left-in">
+<input type="button" value="右侧入" id="right-in">
+<input type="button" value="左侧出" id="left-out">
+<input type="button" value="右侧出" id="right-out">
+<input type="text" id="searchbox">
+<input type="button" value="查询" id="search">
+<ul id="txt-ul"></ul>
+</body>
+<script>
+    var txt = document.getElementById("txt");
+    var left_in = document.getElementById("left-in");
+    var right_in = document.getElementById("right-in");
+    var left_out = document.getElementById("left-out");
+    var right_out = document.getElementById("right-out");
+    var txt_ul = document.getElementById("txt-ul");
+    var searchbox = document.getElementById("searchbox");
+    var search = document.getElementById("search");
+    //    左侧入的点击事件
+    left_in.onclick = function () {
+        if(txt.value ==""){
+            alert("请输入正确的数字，数字不能为空");
+            return false;
+        }else{
+            var arr = new Array;
+            arr = txt.value.split(/\s+|\,|\n/);
+            for(var i=0;i<arr.length;i++){
+                var li = document.createElement("li");
+                li.innerHTML = arr[i];
+                txt_ul.insertBefore(li,txt_ul.firstChild);
+            }
+
+        }
+    }
+    //    左侧入的点击事件
+    right_in.onclick = function () {
+        if(txt.value ==""){
+            alert("请输入正确的数字，数字不能为空");
+            return ;
+        }else{
+            var arr = new Array;
+            arr = txt.value.split(/\s+|\,|\n/);
+            for(var i=0;i<arr.length;i++){
+                var li = document.createElement("li");
+                li.innerHTML = arr[i];
+                txt_ul.appendChild(li);
+            }
+        }
+    }
+    //    左侧出点击事件
+    left_out.onclick = function () {
+        if(txt_ul.childNodes.length<=0){
+            alert("没有元素可以删除");
+            return false;
+        }else{
+            alert("本次删除的元素是:"+txt_ul.firstChild.innerHTML);
+            txt_ul.removeChild(txt_ul.firstChild);
+        }
+    }
+    //    右侧出点击事件
+    right_out.onclick = function () {
+        if(txt_ul.childNodes.length<=0){
+            alert("没有元素可以删除");
+            return false;
+        }else{
+            alert("本次删除的元素是:"+txt_ul.lastChild.innerHTML);
+            txt_ul.removeChild(txt_ul.lastChild);
+        }
+    }
+//    查询点击事件
+    search.onclick = function () {
+        var lis = txt_ul.getElementsByTagName("li");
+        for(var i=0;i<lis.length;i++){
+            if(lis[i].innerHTML.search(searchbox.value)!=-1){
+                lis[i].style.backgroundColor = "blue";
+                lis[i].style.color = "white";
+            }
+        }
+    }
+</script>
+</html>

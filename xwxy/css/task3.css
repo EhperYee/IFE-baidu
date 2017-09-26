@@ -1,63 +1,80 @@
-* {
-	margin: 0;
-	padding: 0;
+*{
+    margin: 0;
+    padding: 0;
 }
-.container {
-	width: 100%;
-	overflow: hidden;
-	background: #eee;
-	border: 1px solid #999;
+.box{
+    position: relative;
+    width:auto;
+    height:auto;
+    background: #eee;
+    border: 1px solid #999;
+    padding: 20px;
+    margin: 20px;;
 }
-.teamName {
-	border: 1px solid #999;
-	width: 200px;
-	position: absolute;
-	left: 20px;
-	top: 20px;
-	background: #fff;
+.box:before{
+    display: table;
+    content: "";
 }
-.teamName .logo {
-	border: 1px solid #999;
-	float: left;
-	height: 80px; 
-	width: 80px;
-	margin: 20px;
-	background: #eee;
+.box:after{
+    display: table;
+    content: "";
+    clear: both;
 }
-.teamName p {
-	float: left;
+.box .left{
+    position: absolute;
+    width:200px;
+    height: 120px;
+    background: #fff;
+    border: 1px solid #999;
 }
-.teamIntro {
-	border: 1px solid #999;
-	width: auto;
-	margin: 20px 160px 20px 240px;
-	background: #fff;
+.box .left-logo{
+    position: relative;
+    display: inline-block;
+    /*vertical-align: middle;*/
+    /*text-align: center;*/
+    width: 120px;
+    float: left;
+
+    left: 20px;
+    top: 20px;
 }
-.teamIntro p {
-	padding: 10px 20px;
+.box .left-logo img{
+    width: 80px;
+    height: 80px;
 }
-.teamLogo {
-	position: absolute;
-	top: 20px;
-	right: 20px;
-	border: 1px solid #999;
-	height: 450px;
-	width: 120px;
-	background: #fff;
+.box .left-name{
+    position: relative;
+    float: right;
+    margin-right:20px;
+    margin-top:20px;
 }
-.teamLogo div {
-	border: 1px solid #999;
-	width: 80px;
-	height: 80px;
-	margin: 20px;
-	background: #eee;
+.center{
+    position: absolute;
+    background: #fff;
+    left: 240px;
+    right: 160px;
+    border: 1px solid #999;
+    padding: 20px;
 }
-.teamLogo div span {
-	display: inline-block;
-	position: relative;
-	top: 20px;
-	line-height: 20px;
-	height: 20px;
-	text-align: center;
-	width: 100%;
+.center section{
+    margin-top:20px;
+}
+.box .right{
+    /*position: absolute;*/
+    position: relative;
+    float: right;
+    width: 120px;
+    height: 430px;
+    background: #fff;
+    border: 1px solid #999;
+    margin-top:20px;
+}
+.box .right-logo{
+    position: relative;
+    left: 20px;
+    margin-top: 20px;
+}
+.box .right-logo img{
+    width: 80px;
+    height: 80px;
 }

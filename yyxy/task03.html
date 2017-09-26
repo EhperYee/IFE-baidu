@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务三：表单（三）联动</title>
+    <style>
+        #box{
+            margin-top:100px;
+            text-align: center;
+            font-size:18px;
+        }
+        #schoolbox{
+            display: none;
+        }
+        #unitsbox{
+            display: none;
+        }
+        select{
+            width: 150px;
+            padding: 5px;
+        }
+        input[type="text"]{
+            width: 250px;
+        }
+        #school2{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div id="box">
+    <div>
+        <input type="radio" name="student" id="student" value="在校生">在校生
+        <input type="radio" name="student" id="not_student" value="非在校生">非在校生
+    </div>
+    <div id="schoolbox">
+        学校
+        <select id="city">
+            <option value="北京">北京</option>
+            <option value="广州">广州</option>
+        </select>
+        <select id="school1">
+            <option value="北京">北京大学</option>
+            <option value="复旦大学">复旦大学</option>
+        </select>
+        <select id="school2">
+            <option value="广州大学">广州大学</option>
+            <option value="中山大学">中山大学</option>
+        </select>
+    </div>
+    <div id="unitsbox">
+        就业单位 <input type="text">
+    </div>
+</div>
+</body>
+<script>
+    var student = document.getElementById("student");
+    var not_student = document.getElementById("not_student");
+    var schoolbox = document.getElementById("schoolbox");
+    var unitsbox = document.getElementById("unitsbox");
+    var city = document.getElementById("city");
+    var school = document.getElementById("school");
+
+    student.onclick = function () {
+        schoolbox.style.display = "block";
+        unitsbox.style.display = "none";
+    }
+    not_student.onclick = function () {
+        schoolbox.style.display = "none";
+        unitsbox.style.display = "block";
+    }
+//
+    city.onclick = function () {
+        switch (this.value){
+            case "北京":
+                school1.style.display = "inline";
+                school2.style.display = "none";
+                break;
+            case "广州":
+                school1.style.display = "none";
+                school2.style.display = "inline";
+                break;
+        }
+    }
+
+
+</script>
+</html>

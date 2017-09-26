@@ -1,160 +1,139 @@
-* {
-	margin: 0;
-	padding: 0;
+*{
+    margin:0;
+    padding: 0;
 }
-nav {
-	width: 100%;
-	height: 57px;
-	background: #000;
+body{
+    background: #dfdfdf;
 }
-.navIcon {
-	width: 146px;
-	height: 57px;
-	float: left;
-	margin-left: 50px;
-	background: url(../images/task2-1.png) no-repeat;
+.nav{
+    height: 80px;
+    background: #414141;
 }
-nav ul {
-	overflow: hidden;
-	width: 600px;
-	float: right;
-	line-height: 57px;
+.nav img{
+    width:190px;
+    height: 80px;
 }
-nav li {
-	float: left;
-	color: #fff;
-	width: 150px;
-	list-style: none;
+.nav ul{
+    float: right;
+    line-height:80px;
 }
-nav li:before {
-	content: "\02022";
-	color: red;
+.nav ul li{
+    float: right;
+    margin-right:25px;
 }
-nav li:nth-last-child(1) {
-	color: gray;
+.nav ul li a{
+    color: #fff;
 }
-.container {
-	width: 100%;
-	height: 100%;
-	background: #dedede;
+.nav ul li a:first-child{
+    color: #ccc;
 }
-
-article {
-	width: 90%;
-	margin-left: 5%;
-	margin-bottom: 20px;
-	background: #fff;
-	padding: 20px;
-	font-size: 18px;
-	line-height: 22px;
+.header{
+    margin:20px;
+    background: #fff;
+    padding:20px;
+    line-height:30px;
+    border-right:3px solid #737373;
+    border-bottom:3px solid #737373;
 }
-article h1 {
-	font-weight: bold;
-	font-size: 30px;
-	margin: 20px 0px;
+.header .text1{
+    text-indent: 2em;
 }
-article h2 {
-	color: #737272;
-	margin: 10px 0px;
+.header2{
+    margin:20px;
+    background: #fff;
+    padding:20px;
+    line-height:30px;
+    border-right:3px solid #737373;
+    border-bottom:3px solid #737373;
 }
-article .titleIntro {
-	color: #737272;
-	text-indent: 5px;
+.header2 .text2{
+    text-indent: 2em;
 }
-article .first {
-	text-indent: 2rem;
+.header2 ul li{
+    list-style: none;
 }
-article img {
-	margin: 20px 0px;
+.picture{
+    margin:20px;
+    background: #fff;
+    padding:20px;
+    line-height:30px;
+    border-right:3px solid #737373;
+    border-bottom:3px solid #737373;
 }
-article:nth-child(2) ul {
-	list-style: none;
-	margin-left: 20px;
-}
-article section {
-	width: 100px;
-	height: 100px;
-	margin: 20px 0px 20px 20px;
-	border: 1px solid gray;
-}
-article section p {
-    width: 100%;
-    height: 20px;
-    line-height: 20px;
+.picture .photo{
+    width:250px;
+    height: 250px;
+    border: 1px solid #000;
     text-align: center;
-    margin-top: 10px;
+    margin-top:20px;
+    margin-left:50px;
 }
-article section img {
-	width: 80px;
-	margin: 10px 10px;
+.picture .photo p{
+    text-align: center;
 }
-article:nth-child(4) ol {
-	margin: 20px 0px 20px 60px;
-	font-weight: bold;
+.picture .photo img{
+    margin:0 auto;
+    width: 200px;
+    height: 200px;
+    /*vertical-align: middle;*/
 }
-article .black {
-	font-weight: bold;
+.table{
+    margin:20px;
+    background: #fff;
+    padding:20px;
+    line-height:30px;
+    border-right:3px solid #737373;
+    border-bottom:3px solid #737373;
 }
-table {
-	width: 100%;
-	border-collapse: collapse;  
-	border: none;
+.table .paiming{
+    margin-left:45px;
 }
-th {
-	color: #fff;
-	background: #000;
+.table table{
+    display: inline-block;
+    border-collapse: collapse;
+    border: 1px solid #ddd;
+    padding:3px;
+    width: 100%;
+
 }
-th,td {
-	border: 1px solid gray;
+.table thead{
+    display: table-header-group;
+    /*border-color: black;*/
+    vertical-align: middle;
 }
-table tr:nth-child(6) td {
-	background: gray;
+.table table th{
+    width: 450px;
+    background-color: #000;
+    color:#fff;
 }
-td {
-	background: #fff;
-} 
-.xxx {
-	border-left: 5px solid gray;
-	border-radius: 1px;
-	text-indent: 20px;
-	line-height: 50px;
-	height: 50px; 
+.table table tr{
+    background-color: #fff;
 }
-.fl {
-	width: 68%;
-	float: right;
-	text-align: left;
+.table table tr:last-child{
+    background-color: #ccc;
+    font-weight:bold;
 }
-.radio.fl {
-	width: 30%;
+.register{
+    margin:20px;
+    background: #fff;
+    padding:20px;
+    line-height:30px;
+    border-right:3px solid #737373;
+    border-bottom:3px solid #737373;
+    line-height:60px;
 }
-.checkbox.fr {
-	width: 5%;
+.register .register2{
+    margin-left:250px;
+    line-height:40px;
 }
-.fr {
-	width: 30%;
-	float: left;
-	text-align: right;
+.register .register2 span{
+    color: #bababa;
 }
-input[type=submit] {
-	width: 100%;
-	height: 50px;
-	line-height: 50px;
-	background: blue;
-	color: #fff;
-}
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder { 
-color: #636363; 
-}
-textarea {
-	height: 6rem;
-	margin-bottom: 10px;
-}
-.copyRight {
-	width: 100%;
-	height: 100px;
-	line-height: 70px;
-	color: #fff;
-	text-align: center;
-	background: #000;
+.register .submit1{
+    width: 100%;
+    height: 40px;
+    background: blue;
+    color:white;
+    font-weight: bold;
+    font-size:15px;
 }

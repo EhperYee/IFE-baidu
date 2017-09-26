@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务五：基础JavaScript练习（二）</title>
+    <style>
+        ul{
+            list-style: none;
+        }
+        ul li{
+            height: 40px;
+            float: left;
+            background: red;
+            color:#fff;
+            margin-left:10px;
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="txt">
+<input type="button" value="左侧入" id="left-in">
+<input type="button" value="右侧入" id="right-in">
+<input type="button" value="左侧出" id="left-out">
+<input type="button" value="右侧出" id="right-out">
+<input type="button" value="排序" id="sort">
+<ul id="txt-ul"></ul>
+</body>
+<script>
+    var txt = document.getElementById("txt");
+    var left_in = document.getElementById("left-in");
+    var right_in = document.getElementById("right-in");
+    var left_out = document.getElementById("left-out");
+    var right_out = document.getElementById("right-out");
+    var txt_ul = document.getElementById("txt-ul");
+    var sort = document.getElementById("sort");
+    //    左侧入的点击事件
+    left_in.onclick = function () {
+        if(txt.value ==""){
+            alert("请输入正确的数字，数字不能为空");
+            return false;
+        }else if(isNaN(txt.value)){
+            alert("请输入正确的数字，只能输入数字");
+            return false;
+        }else if(txt.value>100||txt.value<10){
+            alert("请输入正确的数字，数字在10-100之间");
+            return false;
+        }else if(txt_ul.childElementCount>60){
+            alert("队列元素数量最多为60个");
+            return false
+        }else{
+            var li = document.createElement("li");
+            li.style.height = txt.value*2+"px";
+            li.innerHTML = txt.value;
+            txt_ul.insertBefore(li,txt_ul.firstChild);
+
+        }
+    }
+    //    右侧入的点击事件
+    right_in.onclick = function () {
+        if(txt.value ==""){
+            alert("请输入正确的数字，数字不能为空");
+            return false;
+        }else if(isNaN(txt.value)){
+            alert("请输入正确的数字，只能输入数字");
+            return false;
+        }else if(txt.value>100||txt.value<10){
+            alert("请输入正确的数字，数字在10-100之间");
+            return false;
+        }else if(txt_ul.childElementCount>60){
+            alert("队列元素数量最多为60个");
+            return false
+        }else{
+            var li = document.createElement("li");
+            li.style.height = txt.value*2+"px";
+
+            li.innerHTML = txt.value;
+            txt_ul.appendChild(li);
+        }
+    }
+    //    左侧出点击事件
+    left_out.onclick = function () {
+        if(txt_ul.childNodes.length<=0){
+            alert("没有元素可以删除");
+            return false;
+        }else{
+            alert("本次删除的元素是:"+txt_ul.firstChild.innerHTML);
+            txt_ul.removeChild(txt_ul.firstChild);
+        }
+    }
+    //    右侧出点击事件
+    right_out.onclick = function () {
+        if(txt_ul.childNodes.length<=0){
+            alert("没有元素可以删除");
+            return false;
+        }else{
+            alert("本次删除的元素是:"+txt_ul.lastChild.innerHTML);
+            txt_ul.removeChild(txt_ul.lastChild);
+        }
+    }
+//    排序
+    sort.onclick = function () {
+        var lis = txt_ul.getElementsByTagName("li");
+        var data = new Array;
+        for(var i=0;i<lis.length;i++){
+            var temp = lis[i].childNodes[0].nodeValue;
+            data.push(temp);
+        }
+        data.sort(function (x,y) {
+            return x-y;
+        })
+        for(var j=0;j<data.length;j++){
+            lis[j].innerHTML = data[j];
+            lis[j].style.height = data[j]*2+"px";
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务一：表单（一）单个表单项的检验</title>
+    <style>
+        form{
+            width: 100%;
+            margin:40px auto;
+            text-align: center;
+        }
+        #sp{
+            color: #9f9f9f;
+        }
+    </style>
+</head>
+<body>
+<form action="#">
+    <label for="name">名称</label>
+    <input type="text" id="name">
+    <input type="submit" value="验证" id="submit">
+    <br>
+    <span id="sp">必填，长度为4-16个字符</span>
+</form>
+</body>
+<script>
+
+    var submit = document.getElementById("submit");
+
+    var sp = document.getElementById("sp");
+
+   submit.onclick = function () {
+       check();
+   }
+   function check() {
+       var name = document.getElementById("name");
+//       计算字符数
+       var length = getLength(name.value);
+       if(name.value==null||name.value==""){
+           sp.innerHTML = "不能为空";
+           sp.style.color = "red";
+       }else if(length>=4 && length<=16){
+           sp.innerHTML = "名称格式正确";
+           sp.style.color = "green";
+       }else{
+           sp.innerHTML = "长度必须为4-16个字符";
+           sp.style.color = "red";
+       }
+   }
+   function getLength(str) {
+       var length = str.length;
+       for(var i=0;i<str.length;i++){
+//           如果是汉字length+1
+           if(str.charCodeAt(i)>255){
+               length++;
+           }
+       }
+       return length;
+   }
+</script>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务二：表单（二）多个表单项的动态校验</title>
+    <style>
+        form{
+            margin:30px auto;
+        }
+        div{
+            width: 350px;
+            height: 80px;
+            margin: 0 auto;
+        }
+        div label{
+            display: inline-block;
+            width: 70px;
+            text-align: right;
+            font-weight: bold;
+        }
+        div input{
+            width: 180px;
+            margin-left: 5px;
+            border: 3px solid #000;
+        }
+        div p{
+            margin-left:80px;
+            font-size:13px;
+        }
+        #submitbox{
+            margin-top: 20px;
+            text-align: center;
+        }
+        div #submit{
+            width: 80px;
+            height: 30px;
+            text-align: center;
+            background: #78eeff;
+            color:#fff;
+            border: none;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+<form action="#">
+    <div>
+        <label for="name">名称</label>
+        <input type="text" id="name">
+        <p></p>
+    </div>
+    <div>
+        <label for="password">密码</label>
+        <input type="password" id="password">
+        <p></p>
+    </div>
+    <div>
+        <label for="name">密码确认</label>
+        <input type="password" id="passwords">
+        <p></p>
+    </div>
+    <div>
+        <label for="email">邮箱</label>
+        <input type="email" id="email">
+        <p></p>
+    </div>
+    <div>
+        <label for="iphone">手机</label>
+        <input type="number" id="iphone">
+        <p></p>
+    </div>
+    <div id="submitbox">
+        <input type="submit" value="提交" id="submit">
+    </div>
+</form>
+</body>
+<script>
+
+    var input = document.getElementsByTagName("input");
+    var p = document.getElementsByTagName("p");
+    var submit = document.getElementById("submit");
+    var flag0 = false;
+    var flag1 = false;
+    var flag2 = false;
+    var flag3 = false;
+    var flag4 = false;
+    //       计算字符数
+    function getLength(str) {
+        var length = str.length;
+        for(var i=0;i<str.length;i++){
+            if(str.charCodeAt(i)>255){
+                length++
+            }
+        }
+        return length;
+    }
+// 名称获得焦点函数
+    function focusName() {
+        p[0].innerHTML = "必填，长度为4-16的字符"
+        p[0].style.color = "#999";
+    }
+//    名称失去焦点函数
+    function blurName() {
+       if(input[0].value==""){
+           p[0].innerHTML = "名称不能为空";
+           p[0].style.color = "red";
+           input[0].style.borderColor = "red";
+           flag0 = false;
+       }else if(getLength(input[0].value)<4 || getLength(input[0].value)>16){
+           p[0].innerHTML = "名称格式错误";
+           p[0].style.color = "red";
+           input[0].style.borderColor = "red";
+           flag0 = false;
+       }else{
+           p[0].innerHTML = "名字格式正确";
+           p[0].style.color = "green";
+           input[0].style.borderColor = "green";
+           flag0 = true;
+       }
+    }
+//    密码获得焦点函数
+    function focusPassword() {
+        p[1].innerHTML = "请输入8-16的位的密码"
+        p[1].style.color = "#999";
+    }
+//    密码失去焦点函数
+    function blurPassword() {
+        if(input[1].value == ""){
+            p[1].innerHTML = "密码不能为空";
+            p[1].style.color = "red";
+            input[1].style.borderColor = "red";
+            flag1 = false;
+        }else if(getLength(input[1].value)<8 || getLength(input[1])>16){
+            p[1].innerHTML = "密码格式错误";
+            p[1].style.color = "red";
+            input[1].style.borderColor = "red";
+            flag1 = false;
+        }else{
+            p[1].innerHTML = "密码可用";
+            p[1].style.color = "green";
+            input[1].style.borderColor = "green";
+            flag1 = true;
+        }
+    }
+
+    //    密码确认获得焦点函数
+    function focusPasswords() {
+        p[2].innerHTML = "请再次输入相同密码";
+        p[2].style.color = "#999";
+    }
+    //    密码确认失去焦点
+    function blurPasswords() {
+        if(input[2].value == input[1].value){
+            p[2].innerHTML = "密码输入一致";
+            p[2].style.color = "green";
+            input[2].style.borderColor = "green";
+            flag2 = true;
+        }else{
+            p[2].innerHTML = "密码输入不一致";
+            p[2].style.color = "red";
+            input[2].style.borderColor = "red";
+            flag2 = false;
+        }
+    }
+
+//    邮箱获得焦点函数
+    function focusEmail() {
+        p[3].innerHTML = "请输入正确的邮箱地址";
+        p[3].style.color = "#999";
+    }
+//    邮箱失去焦点函数
+    function blurEmail() {
+        if(input[3].value ==""){
+            p[3].innerHTML = "邮箱不能为空";
+            p[3].style.color = "red";
+            input[3].style.borderColor = "red";
+            flag3 = false;
+        }else{
+            var at = input[3].value.indexOf("@");
+            var point = input[3].value.indexOf(".");
+            if(at<1 || point-at <2){
+                p[3].innerHTML = "邮箱格式错误";
+                p[3].style.color = "red";
+                input[3].style.borderColor = "red";
+                flag3 = false;
+            }else {
+                p[3].innerHTML = "邮箱可用";
+                p[3].style.color = "green";
+                input[3].style.borderColor = "green";
+                flag3 = true;
+            }
+        }
+    }
+//    邮箱获得焦点函数
+    function focusIphone() {
+        p[4].innerHTML = "请输入正确的手机号码";
+        p[4].style.color = "#999";
+    }
+//  邮箱失去焦点函数
+    function blurIphone() {
+        if(input[4].value ==""){
+            p[4].innerHTML = "手机不能为空";
+            p[4].style.color = "red";
+            input[4].style.borderColor = "red";
+            flag4 = false;
+        }else if(input[4].value.length != 11){
+            p[4].innerHTML = "手机号码长度不正确";
+            p[4].style.color = "red";
+            input[4].style.borderColor = "red";
+            flag4 = false;
+        }else{
+            p[4].innerHTML = "手机格式正确";
+            p[4].style.color = "green";
+            input[4].style.borderColor = "green";
+            flag4 = true;
+        }
+    }
+
+//提交函数
+    submit.onclick = function () {
+        if(flag0==true && flag1==true && flag2==true && flag3==true && flag4==true){
+            alert("提交成功")
+            return true;
+        }else{
+            alert("提交失败");
+            return false
+        }
+    }
+
+//    名称
+    input[0].onfocus = focusName;
+    input[0].onblur = blurName;
+//    密码
+    input[1].onfocus = focusPassword;
+    input[1].onblur = blurPassword;
+//    密码确认
+    input[2].onfocus = focusPasswords;
+    input[2].onblur = blurPasswords;
+//    邮箱确认
+    input[3].onfocus = focusEmail;
+    input[3].onblur = blurEmail;
+//    手机确认
+    input[4].onfocus = focusIphone;
+    input[4].onblur = blurIphone;
+
+</script>
+</html>

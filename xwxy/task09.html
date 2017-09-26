@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务九:使用HTML/CSS实现一个复杂的页面</title>
+    <link rel="stylesheet" href="css/task9.css">
+</head>
+<body>
+<!--header-->
+<div id="header">
+    <div class="logo">
+        <img src="images/task9Logo.png" alt="">
+    </div>
+    <div class="login">
+        <img src="images/task9-2.png" alt="">
+        <a href="#">登录</a>
+
+
+    </div>
+    <div class="search">
+        <input type="text" class="search_Text">
+        <img src="images/task9-3.png" alt="">
+    </div>
+</div>
+<!--center-->
+<div id="center">
+    <div class="center_fl">
+        <div class="account">
+            <img src="images/task9-4.png" alt="">
+            <span class="account_name">ABC123</span>
+        </div>
+        <div class="container">
+            <div class="container_sc">
+                <p>110</p>
+                <p>收藏</p>
+            </div>
+            <div class="container_fs">
+                <p>313</p>
+                <p>粉丝</p>
+            </div>
+        </div>
+        <div class="list">
+            <ul>
+                <li><a href="" class="selected class1" style="background:url(images/task9-3.png) 45px center no-repeat;color:#FFF">个人报表</a>
+                    <ul>
+                        <li><a href="" class="selected class2" style="background:url(images/task9-3.png) 67px center no-repeat">文档一</a></li>
+                        <li><a href="" class="class2" style="background:url(images/task9-3.png) 67px center no-repeat;color:#FFF">文档二</a></li>
+                        <ul>
+                            <li><a href="" class="selected class3" style="background:url(images/task9-3.png) 100px center no-repeat;color:#FFF">文件1</a></li>
+                            <li><a href="" class="class3" style="background:url(images/task9-3.png) 100px center no-repeat">文件2</a></li>
+                            <li><a href="" class="class3" style="background:url(images/task9-3.png) 100px center no-repeat">文件3</a></li>
+                        </ul>
+                        <li><a href="" class="class2" style="background:url(images/task9-3.png) 67px center no-repeat">文档三</a></li>
+                    </ul>
+                </li>
+                <li><a href="" class="class1" style="background:url(images/task9-3.png) 45px center no-repeat">个人收藏</a></li>
+                <li><a href="" class="class1" style="background:url(images/task9-3.png) 45px center no-repeat">我的分享</a></li>
+                <li><a href="" class="class1" style="background:url(images/task9-3.png) 45px center no-repeat">图库</a></li>
+                <li><a href="" class="class1" style="background:url(images/task9-3.png) 45px center no-repeat">成长记录</a></li>
+                <li><a href="" class="class1" style="background:url(images/task9-3.png) 45px center no-repeat">账户信息</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="center_fr">
+        <div class="nav">
+            c站&nbsp;/&nbsp;个人报表&nbsp;/&nbsp;文件一&nbsp;/&nbsp;<span>文档二</span>
+        </div>
+        <div class="ye1">
+            <div class="ye1_item">
+                查询项
+                <select name="查询项" class="short">
+                    <option value="1">第一项</option>
+                    <option value="2">第二项</option>
+                    <option value="3">第三项</option>
+                </select>
+            </div>
+            <div class="ye1_buy">
+                <p>
+                    买方
+                    <select name="" id="">
+                        <option value="小A">小A</option>
+                        <option value="小B">小B</option>
+                    </select>
+                </p>
+                <p>
+                    卖方
+                    <select name="" id="">
+                        <option value="小C">小C</option>
+                        <option value="小D">小D</option>
+                    </select>
+                </p>
+                <img src="images/tack9hu.png" alt="" class="ye1_buy_huan">
+            </div>
+            <div class="ye1_data">
+                <p>
+                    日期
+                    <input type="text" value="2016-04-01">
+                </p>
+                <p class="ye1_data_p2">
+                    人数
+                    <select name="" id="">
+                        <option value="10">10人</option>
+                        <option value="20">20人</option>
+                    </select>
+                </p>
+            </div>
+            <div class="ye1_time">
+                <p>
+                    总耗时
+                    <select name="" id="" class="ye1_time_hs">
+                        <option value="10天">10天</option>
+                        <option value="20天">20天</option>
+                    </select>
+                </p>
+                <p class="ye1_time_p2">
+                    成交量
+                    <select name="" id="" class="ye1_time_cjl">
+                        <option value="10项">10项</option>
+                        <option value="20项">20项</option>
+                    </select>
+                </p>
+            </div>
+            <div class="ye1_ss">
+                <input type="submit" value="搜索" class="ye1_ssss">
+            </div>
+        </div>
+        <div class="ye2">
+            <div class="ye2_list1">
+                <img src="images/task9032.png" alt="">
+            </div>
+            <div class="ye2_list2">
+                <span>10:00 am</span>
+                <span>￥1200</span>
+            </div>
+            <div class="ye2_list2">
+                <span>11:00 am</span>
+                <span>￥1200</span>
+            </div>
+            <div class="ye2_list2">
+                <span>12:00 am</span>
+                <span>￥1200</span>
+            </div>
+            <div class="ye2_list2">
+                <span>01:00 pm</span>
+                <span>￥1200</span>
+            </div>
+            <div class="ye2_list2">
+                <span>02:00 pm</span>
+                <span>￥1200</span>
+            </div>
+            <div class="ye2_list2">
+                <span>03:00 pm</span>
+                <span>￥1200</span>
+            </div>
+            <div class="ye2_list3">
+                <img src="images/task9031.png" alt="">
+            </div>
+            <div class="ye2_list4">
+                <img src="images/tack94.png" alt="">
+                <span>历史查询</span>
+            </div>
+        </div>
+        <div class="ye3">
+            <div class="ye3_title">
+                <h4>2016年4月份统计</h4>
+            </div>
+            <div class="ye3_green">
+                <span>133311</span>
+                <span>成交量</span>
+            </div>
+            <div class="ye3_blue">
+                <span>133311</span>
+                <span>成交量</span>
+            </div>
+            <div class="ye3_red">
+                <span>133311</span>
+                <span>成交量</span>
+            </div>
+            <div class="ye3_yellow">
+                <span>133311</span>
+                <span>成交量</span>
+            </div>
+        </div>
+        <div class="ye4">
+            <div class="ye4_fl">
+                <div class="ye4_fl_top">
+                    <span>第一组项目</span>
+                </div>
+                <div class="ye4_fl_bottom">
+                    <div class="ye4_fl_bottom_tab">
+                        <ul>
+                            <li>
+                                项目一
+                                <div class="ye4_uw"></div>
+                            </li>
+                            <li>项目二</li>
+                            <li>项目三</li>
+                            <li>项目四</li>
+                            <li>项目五</li>
+                        </ul>
+                    </div>
+                    <div class="ye4_fl_bottom_table">
+                        <table>
+                            <tr>
+                                <td>购买材料一</td>
+                                <td>购买材料一</td>
+                                <td>购买材料一</td>
+                                <td>购买材料一</td>
+                            </tr>
+                            <tr>
+                                <td>购买材料二</td>
+                                <td>购买材料二</td>
+                                <td>购买材料二</td>
+                                <td>购买材料二</td>
+                            </tr>
+                            <tr>
+                                <td>购买材料四</td>
+                                <td>购买材料四</td>
+                                <td>购买材料四</td>
+                                <td>购买材料四</td>
+                            </tr>
+                            <tr>
+                                <td>购买材料六</td>
+                                <td>购买材料六</td>
+                                <td>购买材料六</td>
+                                <td>购买材料六</td>
+                            </tr>
+                            <tr>
+                                <td>购买材料十三</td>
+                                <td>购买材料十三</td>
+                                <td>购买材料十三</td>
+                                <td>购买材料十三</td>
+                            </tr>
+                            <tr>
+                                <td>购买材料二十</td>
+                                <td>购买材料二十</td>
+                                <td>购买材料二十</td>
+                                <td>购买材料二十</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ye4_fr">
+                <div class="ye4_fr_top">
+                    <span>第一组项目</span>
+                </div>
+                <div class="ye4_fr_bottom">
+                    <div class="ye4_fr_bottom_bt">
+                        <p>标题</p>
+                        <p>项目报表三</p>
+                    </div>
+                    <div class="ye4_fr_bottom_bb">
+                        <div class="ye4_fr_bottom_bb_jg">
+                            <p>价格</p>
+                            <p>￥158</p>
+                        </div>
+                        <div class="ye4_fr_bottom_bb_fzr">
+                            <p>负责人</p>
+                            <p>小A</p>
+                        </div>
+                    </div>
+                    <div class="ye4_fr_bottom_mx">
+                        <div class="ye4_fr_bottom_mx_xxmx">
+                            <p>详细描叙</p>
+                            <p>该项目目前负责人是......</p>
+                        </div>
+                    </div>
+                    <div class="ye4_fr_bottom_xy">
+                        <input type="checkbox" class="ye4_fr_bottom_xy_cx">
+                        <span>遵守保密协议</span>
+                        <input type="submit" value="搜索" class="ye4_fr_bottom_xy_sm">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="ye5">
+            <div class="ye5_fl">
+                <div class="ye5_fl_bt">
+                    <span>日历</span>
+                </div>
+                <div class="ye5_fl_rq">
+                    <div class="ye5_fl_rq_sj">
+                        <select name="" class="ye5_fl_s1 ye5_fl_se">
+                            <option value="2017年">2017年</option>
+                            <option value="2016年">2016年</option>
+                        </select>
+                        <select name="" class="ye5_fl_s2 ye5_fl_se">
+                            <option value="4月">4月</option>
+                            <option value="3月">3月</option>
+                        </select>
+                        <select name="" class="ye5_fl_s3 ye5_fl_se">
+                            <option value="标注日期">标注日期</option>
+                        </select>
+                        <input type="submit" value="回到今天" class="ye5_fl_s4 ye5_fl_se">
+                    </div>
+                    <div class="ye5_fl_rq_table">
+                        <table>
+                            <tbody>
+                            <tr>
+                                <th>一</th>
+                                <th>二</th>
+                                <th>三</th>
+                                <th>四</th>
+                                <th>五</th>
+                                <th>六</th>
+                                <th>日</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>1<br><span style="color:#E13528">愚人节</span></td>
+                                <td><span style="color:#E13528">2</span><br>廿五</td>
+                                <td><span style="color:#E13528">3</span><br>廿六</td>
+                            </tr>
+                            <tr>
+                                <td>4<br>廿七</td>
+                                <td>5<br><span style="color:#E13528">清明节</span></td>
+                                <td>6<br>廿九</td>
+                                <td>7<br>三月</td>
+                                <td>8<br>初二</td>
+                                <td><span style="color:#E13528">9</span><br>初三</td>
+                                <td><span style="color:#E13528">10</span><br>初四</td>
+                            </tr>
+                            <tr>
+                                <td>11<br>初五</td>
+                                <td>12<br>初六</td>
+                                <td>13<br>初七</td>
+                                <td>14<br>初八</td>
+                                <td>15<br>初九</td>
+                                <td><span style="color:#E13528">16</span><br>初十</td>
+                                <td><span style="color:#E13528">17</span><br>十一</td>
+                            </tr>
+                            <tr>
+                                <td>18<br>十二</td>
+                                <td>19<br>十三</td>
+                                <td>20<br>十四</td>
+                                <td>21<br>十五</td>
+                                <td>22<br>十六</td>
+                                <td><span style="color:#E13528">23</span><br>十二</td>
+                                <td><span style="color:#E13528">24</span><br>十三</td>
+                            </tr>
+                            <tr>
+                                <td>25<br>十九</td>
+                                <td>26<br>廿十</td>
+                                <td>27<br>廿一</td>
+                                <td>28<br>廿二</td>
+                                <td>29<br>廿三</td>
+                                <td><span style="color:#E13528">30</span><br>廿四</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="ye5_fr">
+                <div class="ye5_fr_bt">
+                    <span>汽车行业品牌榜</span>
+                </div>
+                <div class="ye5_fr_nr">
+                    <table>
+                        <tr>
+                            <th>排名</th>
+                            <th>品牌</th>
+                            <th>搜索指数</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>大众</td>
+                            <td>
+                                48912001
+                                <span class="ye5_fr_nr_sp1">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>丰田</td>
+                            <td>
+                                29307333
+                                <span class="ye5_fr_nr_sp2">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>奥迪</td>
+                            <td>
+                                23139070
+                                <span class="ye5_fr_nr_sp3">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>本田</td>
+                            <td>
+                                22885564
+                                <span class="ye5_fr_nr_sp4">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>福特</td>
+                            <td>
+                                22324792
+                                <span class="ye5_fr_nr_sp5">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>宝马</td>
+                            <td>
+                                21444077
+                                <span class="ye5_fr_nr_sp6">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>现代</td>
+                            <td>
+                                20114969
+                                <span class="ye5_fr_nr_sp7">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>8</td>
+                            <td>起亚</td>
+                            <td>
+                                19251680
+                                <span class="ye5_fr_nr_sp8">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>9</td>
+                            <td>奔驰</td>
+                            <td>
+                                19172837
+                                <span class="ye5_fr_nr_sp9">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>别克</td>
+                            <td>
+                                18544027
+                                <span class="ye5_fr_nr_sp10">
+                                    <span></span>
+                                </span>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.box{
+    background: #ccc;
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+    padding:20px;
+}
+.box .one{
+    width: 150px;
+    height: 120px;
+    line-height: 120px;
+    text-align: center;
+    background: red;
+    color:#fff;
+    margin-bottom: 20px;
+    margin-right:20px;
+}
+.box .two{
+    width: 150px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: red;
+    color:#fff;
+    margin-bottom: 20px;
+    margin-right:20px;
+}
+.box .three{
+    width: 150px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background: red;
+    color:#fff;
+    margin-bottom: 20px;
+    margin-right:20px;
+}
+.box .four{
+    width: 150px;
+    height: 200px;
+    line-height: 200px;
+    text-align: center;
+    background: red;
+    color:#fff;
+    margin-bottom: 20px;
+    margin-right:20px;
+}
+/*小于640px*/
+
+@media (max-width:640px) {
+    .box{
+        background: #ccc;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 20px;
+    }
+    .box .one{
+        order: 2;
+    }
+    .box .two{
+        order: 3;
+    }
+    .box .three{
+        order: 4;
+    }
+    .box .four{
+        order: 1;
+    }
+}

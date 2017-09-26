@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>任务五：听指令的小方块（二）</title>
+    <style>
+        table{
+            margin:10px auto;
+            border-spacing: 0;
+            position: relative;
+            box-sizing: border-box;
+        }
+        tr:nth-child(n+2) > td:nth-child(n+2){
+            border: 1px solid #999;
+        }
+        td{
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            box-sizing: border-box;
+
+        }
+        #box{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 300px;
+            left: 250px;
+            box-sizing: border-box;
+            transition: all 1s;
+        }
+        #box .box-1{
+            width: 50px;
+            height: 10px;
+            background: blue;
+        }
+        #box .box-2{
+            width: 50px;
+            height: 40px;
+            background: red;
+        }
+        #yyy{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <tr>
+        <td></td>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+        <td>9</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <div id="box">
+                <div class="box-1"></div>
+                <div class="box-2"></div>
+            </div>
+        </td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>9</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>10</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<div id="yyy">
+    <input type="text" id="txt">
+    <input type="button" value="确定" id="btn">
+    <br>
+    <input type="button" value="GO" id="b1">
+    <input type="button" value="TUN LEF" id="b2">
+    <input type="button" value="TUN RIG" id="b3">
+    <input type="button" value="TUN BAC" id="b4">
+    <br>
+    <input type="button" value="TRA LEF" id="b5">
+    <input type="button" value="TRA TOP" id="b6">
+    <input type="button" value="TRA RIG" id="b7">
+    <input type="button" value="TRA BOT" id="b8">
+    <br>
+    <input type="button" value="MOV LEF" id="b9">
+    <input type="button" value="MOV TOP" id="b10">
+    <input type="button" value="MOV RIG" id="b11">
+    <input type="button" value="MOV BOT" id="b12">
+    <br>
+    <p>在输入框中允许输入如下指令，按下按钮后，使得正方形做相应动作</p>
+    <p>GO：向蓝色边所面向的方向前进一格（一格等同于正方形的边长）</p>
+    <p>TUN LEF：向左转（逆时针旋转90度）</p>
+    <p>TUN RIG：向右转（顺时针旋转90度）</p>
+    <p>TUN BAC：向右转（旋转180度）</p>
+    <p>增加新的指令如下：</p>
+    <p>TRA LEF：向屏幕的左侧移动一格，方向不变</p>
+    <p>TRA TOP：向屏幕的上面移动一格，方向不变</p>
+    <p>TRA RIG：向屏幕的右侧移动一格，方向不变</p>
+    <p>TRA BOT：向屏幕的下面移动一格，方向不变</p>
+    <p>MOV LEF：方向转向屏幕左侧，并向屏幕的左侧移动一格</p>
+    <p>MOV TOP：方向转向屏幕上面，向屏幕的上面移动一格</p>
+    <p>MOV RIG：方向转向屏幕右侧，向屏幕的右侧移动一格</p>
+    <p>MOV BOT：方向转向屏幕下面，向屏幕的下面移动一格</p>
+</div>
+</body>
+<script>
+    var txt = document.getElementById("txt");
+    var btn = document.getElementById("btn");
+    var box = document.getElementById("box");
+    var b1 = document.getElementById("b1");
+    var b2 = document.getElementById("b2");
+    var b3 = document.getElementById("b3");
+    var b4 = document.getElementById("b4");
+
+    //    记录角度跟方向
+    var deg=0;
+    var direction=1;
+
+
+    btn.onclick = function () {
+        if(txt.value == "GO"){
+            GO();
+        }
+        if(txt.value == "TUN LEF"){
+            TUN_LEF();
+        }
+        if(txt.value == "TUN RIG"){
+            TUN_RIG();
+        }
+        if(txt.value == "TUN BAC"){
+            TUN_BAC();
+        }
+    }
+    //旋转函数
+    function tran(x) {
+        box.style.transform = "rotate("+x+"deg)"
+    }
+
+    function TUN_LEF() {
+        deg += -90;
+        tran(deg);
+    }
+    function TUN_RIG() {
+        deg += 90;
+        tran(deg);
+    }
+    function TUN_BAC() {
+        deg += 180;
+        tran(deg);
+    }
+
+    //    判断当前方向
+    function isDirection() {
+        if(deg >=0){
+            var i = deg % 360;
+            switch (i){
+                case 0:
+                    direction = 1;
+                    break;
+                case 90:
+                    direction = 2;
+                    break;
+                case 180:
+                    direction = 3;
+                    break;
+                case 270:
+                    direction = 4;
+                    break;
+                default:
+                    return;
+            }
+        }else if(deg < 0){
+            var j = deg % 360;
+            switch (j){
+                case 0:
+                    direction = 1;
+                    break;
+                case -90:
+                    direction = 4;
+                    break;
+                case -180:
+                    direction = 3;
+                    break;
+                case -270:
+                    direction = 2;
+                    break;
+                default:
+                    return;
+            }
+        }
+    }
+    function GO() {
+        isDirection();
+        var top = box.offsetTop;
+        var left = box.offsetLeft;
+        if(direction === 1){
+            if(top >= 100){
+                box.style.top = (top-50)+"px";
+            }else{
+                return false;
+            }
+        }
+        if(direction === 2){
+            if(left <= 450){
+                box.style.left = (left+50)+"px"
+            }else{
+                return false;
+            }
+        }
+        if(direction === 3){
+            if(top <= 450){
+                box.style.top = (top+50)+"px"
+            }else{
+                return false;
+            }
+        }
+        if(direction === 4){
+            if(left >= 100){
+                box.style.left = (left-50)+"px"
+            }else{
+                return false;
+            }
+        }
+    }
+//  TRA指令
+    function TRA_LEF() {
+        var left = box.offsetLeft;
+        if(left >= 100){
+            box.style.left = (left-50)+"px";
+        }else{
+            return false;
+        }
+    }
+    function TRA_TOP() {
+        var top = box.offsetTop;
+        if(top >= 100){
+            box.style.top = (top-50)+"px";
+        }else{
+            return false;
+        }
+    }
+    function TRA_RIG() {
+        var left = box.offsetLeft;
+        if(left <=450){
+            box.style.left = (left+50)+"px";
+        }else{
+            return false;
+        }
+    }
+    function TRA_BOT() {
+        var top = box.offsetTop;
+        if(top <=450){
+            box.style.top = (top+50)+"px"
+        }else{
+            return false;
+        }
+    }
+//    MOV指令
+    function MOV_LEF() {
+        box.style.transform = "rotate(-90deg)";
+        deg=-90;
+        var left = box.offsetLeft;
+            if(left >= 100){
+                box.style.left = (left-50)+"px";
+            }else{
+                return false;
+            }
+    }
+    function MOV_TOP() {
+        box.style.transform = "rotate(0deg)";
+        deg=0;
+        var top = box.offsetTop;
+        if(top >= 100){
+            box.style.top = (top-50)+"px";
+        }else{
+            return false;
+        }
+    }
+    function MOV_RIG() {
+        box.style.transform = "rotate(90deg)";
+        deg=90;
+        var left = box.offsetLeft;
+        if(left <=450){
+            box.style.left = (left+50)+"px";
+        }else{
+            return false;
+        }
+    }
+    function MOV_BOT() {
+        box.style.transform = "rotate(180deg)";
+        deg=180;
+        var top = box.offsetTop;
+        if(top <=450){
+            box.style.top = (top+50)+"px"
+        }else{
+            return false;
+        }
+    }
+
+
+
+
+
+    b1.onclick = function () {
+        GO();
+    }
+    b2.onclick = function () {
+        TUN_LEF();
+    }
+    b3.onclick = function () {
+        TUN_RIG();
+    }
+    b4.onclick = function () {
+        TUN_BAC();
+    }
+    b5.onclick = function () {
+        TRA_LEF();
+    }
+    b6.onclick = function () {
+        TRA_TOP();
+    }
+    b7.onclick = function () {
+        TRA_RIG();
+    }
+    b8.onclick = function () {
+        TRA_BOT();
+    }
+    b9.onclick = function () {
+        MOV_LEF()
+    }
+    b10.onclick = function () {
+        MOV_TOP();
+    }
+    b11.onclick = function () {
+        MOV_RIG();
+    }
+    b12.onclick = function () {
+        MOV_BOT();
+    }
+</script>
+</html>

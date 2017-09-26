@@ -30,6 +30,19 @@ https://ehperyee.github.io/IFE-baidu/xwxy/task08.html
 task09:
 https://ehperyee.github.io/IFE-baidu/xwxy/task09.html
 
+task10:
+https://ehperyee.github.io/IFE-baidu/xwxy/task10.html
+
+task11:
+https://ehperyee.github.io/IFE-baidu/xwxy/task11.html
+
+task12:
+https://ehperyee.github.io/IFE-baidu/xwxy/task12.html
+
+
+
+
+
 斌斌学院(JavaScript)
 
 task01:
@@ -53,11 +66,8 @@ https://ehperyee.github.io/IFE-baidu/bbxy/task06.html
 task07:
 https://ehperyee.github.io/IFE-baidu/bbxy/task07.html
 
-task08:
-https://ehperyee.github.io/IFE-baidu/bbxy/task08.html
 
-task09:
-https://ehperyee.github.io/IFE-baidu/bbxy/task09.html
+
 
 耀耀学院
 
